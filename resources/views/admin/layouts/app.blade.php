@@ -18,7 +18,6 @@
         @include('admin.layouts.footer')
     </div>
     
-    @include('admin.layouts.postjs')
 
 </body>
 </html>

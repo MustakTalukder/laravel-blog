@@ -19,15 +19,19 @@
               <div class="box-header with-border">
                 <h3 class="box-title">Title</h3>
               </div>
-              <!-- /.box-header -->
-              <!-- form start -->
-            <form role="form">
+
+              @include('includes.messages')
+
+
+            <form role="form" action="{{ route('tag.store')}}" method="post" >
+
+              {{ csrf_field() }}
+
+
+
                 <div class="box-body">
 
-
                     <div class="col-lg-6">
-
-
     
                         <div class="form-group">
                         <label for="name">Tag Title</label>
@@ -44,6 +48,7 @@
         
                         <div class="form-group">
                         <button type="submit" class="btn btn-primary">Submit</button>
+                        <a href="{{ route('tag.index') }}" class="btn btn-warning">Back</a>
                         </div>
 
                     </div>
@@ -52,11 +57,6 @@
 
                 </div>  
             </form>
-
-
-
-
-
 
 
             </div>

@@ -1,6 +1,21 @@
 
 @extends('admin.layouts.app')
 
+
+
+@section('headSection')
+
+<link rel="stylesheet" href="{{asset('admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}">
+<link rel="stylesheet" href="{{asset('admin/bower_components/datatables.net/js/jquery.dataTables.min.js')}}">
+    
+@endsection
+
+
+
+
+
+
+
 @section('main-content')
 
 
@@ -18,15 +33,17 @@
           <div class="box box-primary">
               <div class="box-header with-border">
                 <h3 class="box-title">Category</h3>
+
               </div>
-              <!-- /.box-header -->
-              <!-- form start -->
-            <form role="form">
+
+              @include('includes.messages')
+
+            <form role="form" action="{{ route('category.store') }}" method="post">
+              {{ csrf_field() }}
+
+
                 <div class="box-body">
-
-
                     <div class="col-lg-6">
-
 
     
                         <div class="form-group">
@@ -44,6 +61,7 @@
         
                         <div class="form-group">
                         <button type="submit" class="btn btn-primary">Submit</button>
+                        <a href="{{ route('category.index')}}" class="btn btn-warning" >Back</a>
                         </div>
 
                     </div>
@@ -73,4 +91,32 @@
 
 
     
+@endsection
+
+
+
+
+@section('footerSection')
+<!-- DataTables -->
+    <script src="{{ asset('admin/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
+    
+    <script>
+      $(function () {
+        $('#example1').DataTable()
+        $('#example2').DataTable({
+          'paging'      : true,
+          'lengthChange': false,
+          'searching'   : false,
+          'ordering'    : true,
+          'info'        : true,
+          'autoWidth'   : false
+        })
+      })
+    </script>
+
+
+
+<script src="admin/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="admin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 @endsection
