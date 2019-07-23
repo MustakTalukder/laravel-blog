@@ -59,8 +59,8 @@
                     <td>{{ $post->subtitle}}</td>
                     <td>{{ $post->slug}}</td>
                     <td>{{ $post->created_at}}</td>
-                    <td>Edit</td>
-                    <td>Delete</td>
+                    <td><i class="fas fa-edit"></i></td>
+                    <td><i class="fas fa-trash-alt"></i></td>
 
                     @endforeach
 

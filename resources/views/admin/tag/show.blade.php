@@ -67,8 +67,8 @@
                     <td>{{ $loop->index + 1}}</td>
                     <td>{{ $tag->name}}</td>
                     <td>{{ $tag->slug}}</td>
-                    <td>Edit</td>
-                    <td>Delete</td>
+                    <td><i class="fas fa-edit"></i></td>
+                    <td><i class="fas fa-trash-alt"></i></td>
 
                     @endforeach
 
