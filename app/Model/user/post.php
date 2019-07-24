@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class post extends Model
 {
     public function tags(){
-        return $this->belongsToMany('App\Model\user\tag', 'post_tags');    
+        return $this->belongsToMany('App\Model\user\tag', 'post_tags')->withTimestamps();
     }
 
 
@@ -15,6 +15,6 @@ class post extends Model
     // Connection with Categories
     public function categories()
     {
-        return $this->belongsToMany('App\Model\user\category', 'category_posts');
+        return $this->belongsToMany('App\Model\user\category', 'category_posts')->withTimestamps();
     }
 }

@@ -79,11 +79,6 @@
                   </div>
 
 
-                  
-                  <div class="form-group">
-                      <label for="image">File input</label>
-                      <input type="file" name="image" id="image">
-                  </div>
 
                   <div class="form-group" data-select2-id="13">
                       <label>Select Tag</label>
@@ -100,7 +95,9 @@
 
                       @foreach ($tags as $tag)
                       
-                      <option value="{{ $tag->id }}" >{{$tag->name}}</option>
+                      <option value="{{ $tag->id }}" >
+                        {{$tag->name}}
+                      </option>
                           
                       @endforeach
 
