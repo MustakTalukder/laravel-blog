@@ -47,35 +47,8 @@
                   <label for="slug">Post Slug</label>
                   <input value="{{ $post->slug }}" type="text" class="form-control" id="slug" name="slug" placeholder="Slug">
                 </div>
-          
-                <div class="box">
-                  <div class="box-header">
-                    <h3 class="box-title">Write Post Body Here
-                      <small>Simple and fast</small>
-                    </h3>
-                    <div class="pull-right box-tools">
-                      <button type="button" class="btn btn-default btn-sm" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-                          <i class="fa fa-minus"></i>
-                      </button>
-                    </div>
-                </div>
 
 
-
-
-
-                <div class="box-body pad">
-                 
-                    <textarea 
-                    class="textarea" 
-                    name="body" 
-                    placeholder="Place some text here" 
-                    style="width: 100%; height: 200px; font-size: 14px; 
-                    line-height: 18px; border: 1px solid #dddddd; padding: 10px;"
-                    >{{ $post->body }}</textarea>
-                  
-                </div>
-              </div>
                 <div class="checkbox">
                     <label>
                       <input 
@@ -167,6 +140,25 @@
                   
               </div>
 
+              <div class="col-lg-12">
+                          
+                  <div class="box">
+
+                      <div class="box-body pad">
+                       
+                          <textarea 
+                          id="editor1"
+                          name="body" 
+                           
+                          style="width: 100%; height: 200px; font-size: 14px; 
+                          line-height: 18px; border: 1px solid #dddddd; padding: 10px;"
+                          >{{ $post->body }}</textarea>
+                        
+                      </div>
+      
+                    </div>
+              </div>
+
             </div>
 
             <div class="box-footer">
@@ -194,6 +186,10 @@
 
 
 @section('footerSection')
+
+{{-- CK Editor full pack --}}
+<script src="//cdn.ckeditor.com/4.12.1/full/ckeditor.js"></script>
+
 
 <!-- Select2 -->
 <script src="{{asset('admin/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
