@@ -3,6 +3,7 @@
 
 <link rel="stylesheet" href="{{asset('admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js')}}">
 <link rel="stylesheet" href="{{asset('admin/bower_components/datatables.net/js/jquery.dataTables.min.js')}}">
+<link rel="stylesheet" href="{{asset('admin/bower_components/select2/dist/css/select2.min.css')}}">
     
 @endsection
 
@@ -64,7 +65,7 @@
               </div>
                 <div class="checkbox">
                     <label>
-                      <input type="checkbox" name="status" id="status"> Publish
+                      <input type="checkbox" name="status" id="status" value="1"> Publish
                     </label>
                 </div>
 
@@ -75,6 +76,58 @@
                   <div class="form-group">
                       <label for="image">File input</label>
                       <input type="file" name="image" id="image">
+                  </div>
+
+
+                  
+                  <div class="form-group">
+                      <label for="image">File input</label>
+                      <input type="file" name="image" id="image">
+                  </div>
+
+                  <div class="form-group" data-select2-id="13">
+                      <label>Select Tag</label>
+                      <select 
+                      class="form-control select2 select2-hidden-accessible" 
+                      multiple="" 
+                      data-placeholder="Select a State" 
+                      style="width: 100%;" 
+                
+                      tabindex="-1" 
+                      aria-hidden="true"
+                      name="tags[]"
+                      >
+
+                      @foreach ($tags as $tag)
+                      
+                      <option value="{{ $tag->id }}" >{{$tag->name}}</option>
+                          
+                      @endforeach
+
+
+                      </select>
+                    </div>
+
+                  <div class="form-group" data-select2-id="14">
+                      <label>Select Category</label>
+                      <select 
+                      class="form-control select2 select2-hidden-accessible" 
+                      multiple="" 
+                      data-placeholder="Select a Category" 
+                      style="width: 100%;" 
+                     
+                      tabindex="-1" 
+                      aria-hidden="true"
+                      name="categories[]"
+                      >
+                      @foreach ($categories as $category)
+                      
+                      <option value="{{ $category->id }}" >{{$category->name}}</option>
+                              
+                      @endforeach
+
+
+                      </select>
                   </div>
                   
               </div>
@@ -106,6 +159,16 @@
 
 
 @section('footerSection')
+<!-- Select2 -->
+<script src="{{asset('admin/bower_components/select2/dist/js/select2.full.min.js')}}"></script>
+
+<script>
+  $(document).ready(function(){
+    $(".select2").select2();
+  });
+</script>
+
+
 <!-- DataTables -->
     <script src="{{ asset('admin/bower_components/datatables.net/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') }}"></script>
