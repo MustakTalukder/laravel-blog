@@ -2,18 +2,14 @@
 @extends('user/app')
 
 
+@section('head')
+<link rel="stylesheet" href="{{asset('user/css/prism.css')}}">
+@endsection
+
 @section('bg-img', asset('user/img/post-bg.jpg'))
 @section('title', $post->title)
 @section('sub-heading', $post->subtitle)
-    
-
-
-
-
-
-
-
-
+  
 @section('main-content')
 
 
@@ -52,5 +48,11 @@
         </div>
       </article>
     
+    
+@endsection
+
+@section('footer')
+
+    <script src="{{asset('user/js/prism.js')}}"></script>
     
 @endsection
