@@ -32,7 +32,11 @@
             <hr>
             <!-- Pager -->
             <div class="clearfix">
-              <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+              <ul class="pager" >
+                <li class="next" style="list-style: none;">
+                  {{$posts->links()}}
+                </li>
+              </ul>
             </div>
           </div>
         </div>
