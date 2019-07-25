@@ -187,8 +187,6 @@
 
 @section('footerSection')
 
-{{-- CK Editor full pack --}}
-<script src="//cdn.ckeditor.com/4.12.1/full/ckeditor.js"></script>
 
 
 <!-- Select2 -->
@@ -223,4 +221,8 @@
 
 <script src="admin/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="admin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+
+
+{{-- CK Editor full pack --}}
+<script src="{{ asset('admin/ckeditor/ckeditor.js') }}"></script>
 @endsection
