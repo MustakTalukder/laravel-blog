@@ -24,7 +24,7 @@
             <small>Created at {{ $post->created_at->diffForHumans() }}</small>
             @foreach ($post->categories as $category)
               <small class="float-right" style="margin-right: 20px">
-                {{$category->name}}      
+                <a href="{{ route('category', $category->slug ) }}">{{$category->name}} </a>     
               </small>
             @endforeach
 
@@ -34,9 +34,12 @@
               {{-- TAg Clouds --}}
               <h3>Tag Clouds</h3>
               @foreach ($post->tags as $tag)
-              <small class="float-left" style="margin-right 20px; border-radius: 5px; border: 1px solid gray; padding: 5px;">
-                {{$tag->name}}      
-              </small>
+
+                <a href="{{ route('tag', $tag->slug ) }}">
+                  <small class="float-left" style="margin-right 20px; border-radius: 5px; border: 1px solid gray; padding: 5px;">
+                    {{$tag->name}}      
+                  </small>
+                </a>
               @endforeach
 
             </div>
@@ -54,5 +57,5 @@
 @section('footer')
 
     <script src="{{asset('user/js/prism.js')}}"></script>
-    
+
 @endsection
