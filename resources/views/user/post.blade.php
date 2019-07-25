@@ -16,6 +16,10 @@
 
 @section('main-content')
 
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=2071981976441127&autoLogAppEvents=1"></script>
+
 <article>
         <div class="container">
           <div class="row">
@@ -40,6 +44,10 @@
               @endforeach
 
             </div>
+
+
+          <div class="fb-comments" data-href="{{ Request::url() }}" data-width="" data-numposts="5"></div>
+
           </div>
         </div>
       </article>
